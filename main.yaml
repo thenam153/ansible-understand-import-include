@@ -1,0 +1,16 @@
+---
+- hosts: localhost
+  gather_facts: no 
+  vars:
+    name: "Nam The"
+  tasks:
+    - name: Include Task
+      include_tasks: ./include_task.yaml
+
+    - name: Debug Var
+      debug: var=name
+
+    - name: Import Task
+      import_tasks: ./import_task.yaml
+      vars:
+        name: "Nam Import"
